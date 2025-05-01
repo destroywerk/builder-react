@@ -5,6 +5,14 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'build',
-    sourcemap: true
+    sourcemap: true,
+    commonjsOptions: {
+      transformMixedEsModules: true
+    }
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      target: 'es2020'
+    }
   }
 }) 
